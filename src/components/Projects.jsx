@@ -26,7 +26,7 @@ function ProjectDialog({ project, onClose }) {
       previousFocus?.focus();
     };
   }, []);
-  return <dialog ref={dialog} className="project-dialog" aria-labelledby="dialog-title" onCancel={onClose} onClick={event => {
+  return <dialog ref={dialog} className="project-dialog" style={{ '--project-dialog-width': `${Math.min(project.imageWidth || 850, 1280)}px` }} aria-labelledby="dialog-title" onCancel={onClose} onClick={event => {
     if (event.target === dialog.current) {
       const rect = dialog.current.getBoundingClientRect();
       if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) onClose();

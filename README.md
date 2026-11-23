@@ -43,6 +43,8 @@ Selected Work uses the `featured` flag to present UiTM CAMS, A.R.E.S., GITC, and
 
 Your supplied CAMS, A.R.E.S., GITC, Laravel, and Smart Bathtub images are copied unchanged into `public/images/projects/` and connected to their respective projects. The local `images/` folder holds source copies and is ignored by Git. `imageWidth` and `imageHeight` preserve each screenshot's proportions, and project dialogs include links to open the full-size originals.
 
+Screenshot frames remain straight and unscaled on hover to avoid softening interface text. Preview images use their natural aspect ratios, and additional project cards size independently so a tall prototype photo cannot create a large gap above the Laravel screenshot. At tablet and mobile widths, additional project previews use the full content width.
+
 Use local PNG/WebP/AVIF/JPEG images at sensible sizes. The portrait is loaded with high priority and project images are lazy-loaded. Preserve readable screenshot resolution and update `imageWidth` / `imageHeight` when replacing images.
 
 When adding or replacing a file or link, run `npm run check` and `npm run build` again. Manually open the project previews, dialogs, navigation, contact/download links, and mobile menu after changes.
@@ -80,4 +82,4 @@ The included SVG social card works as a local graphic. For broad social network 
 
 ## Implementation verification
 
-The production build, content validation, and rendered HTML/asset checks passed during implementation. The supplied GitHub profile, three repositories, and A.R.E.S. live URL returned HTTP 200. Responsive CSS covers desktop, tablet, and mobile, and the oversized nameplate was checked against the bundled font's metrics to prevent horizontal overflow. Full visual mobile and interaction testing could not be completed because browser access was unavailable and Safari Computer Use access was not approved. Check the site in a browser before publishing, including at 320px, 390px, 768px, and desktop widths.
+The production build, content validation, and rendered HTML/asset checks pass. The supplied GitHub profile, three repositories, and A.R.E.S. live URL returned HTTP 200. Selected Work spacing and image presentation were reviewed in Safari at desktop (1440px), tablet (768px), and mobile (390px) widths; the Laravel project dialog and Escape dismissal were also checked. The oversized nameplate was checked against the bundled font's metrics to prevent horizontal overflow.
