@@ -1,4 +1,4 @@
-import { Camera, Image, Monitor, Network, Smartphone } from 'lucide-react';
+import { Camera, Monitor, Network, Smartphone } from 'lucide-react';
 
 function MissingAsset({ type = 'web', compact = false }) {
   const content = {
@@ -33,8 +33,7 @@ export default function ProjectVisual({ project }) {
       {isWeb ? <BrowserFrame project={project} type={type} /> : <div className={`preview-original ${project.id === 'gitc' ? 'preview-topology' : ''}`}>
         {project.image ? <img src={project.image} alt={project.imageAlt} width={project.imageWidth || 1400} height={project.imageHeight || 950} loading="lazy" /> : <MissingAsset type={project.id === 'gitc' ? 'topology' : 'prototype'} />}
       </div>}
-      {showPhone && <div className="preview-phone"><div className="phone-speaker" aria-hidden="true" /><div className="phone-viewport">{project.mobileImage ? <img src={project.mobileImage} alt={project.mobileImageAlt} width="420" height="900" loading="lazy" /> : <MissingAsset type="android" compact />}</div></div>}
+      {showPhone && <div className="preview-phone"><div className="phone-speaker" aria-hidden="true" /><div className="phone-viewport">{project.mobileImage ? <img src={project.mobileImage} alt={project.mobileImageAlt} width={project.mobileImageWidth || 420} height={project.mobileImageHeight || 900} loading="lazy" /> : <MissingAsset type="android" compact />}</div></div>}
     </div>
-    <p className="preview-caption"><Image size={14} aria-hidden="true" />{project.image ? (project.id === 'gitc' ? 'Original network design · academic proposal' : project.id === 'bathtub' ? 'Physical prototype photograph' : project.id === 'cams' && !project.mobileImage ? 'Web dashboard · Android screenshot pending' : 'Project screenshot') : (project.id === 'gitc' ? 'Diagram placeholder · academic design proposal' : project.id === 'bathtub' ? 'Photo placeholder · physical prototype' : 'Preview placeholder · screenshots to be added')}</p>
   </div>;
 }

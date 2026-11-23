@@ -176,7 +176,6 @@ h2 { font-family: var(--display); font-weight: 600; font-size: clamp(3.5rem, 6vw
 .asset-placeholder > svg { margin-bottom: 16px; opacity: .8; }
 .asset-placeholder-title { font-family: Georgia, serif; font-style: italic; font-size: clamp(1rem, 1.7vw, 1.5rem); line-height: 1.25; }
 .asset-placeholder-note { font-size: .75rem; line-height: 1.5; margin-top: 10px; }
-.preview-caption { display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 12px 18px; font-size: .75rem; line-height: 1.5; border-top: 1px solid #00000015; }
 .preview-stage-devices { aspect-ratio: 1.4; padding-right: 70px; }
 .preview-stage-devices .preview-browser { transform: none; }
 .preview-phone { position: absolute; width: 25%; max-width: 172px; aspect-ratio: .5; bottom: 22px; right: 24px; padding: 7px; border: 1px solid #5f646b; border-radius: 23px; background: #292e34; box-shadow: 0 10px 24px #20251c40; transform: none; }
@@ -198,7 +197,7 @@ h2 { font-family: var(--display); font-weight: 600; font-size: clamp(3.5rem, 6vw
 .preview-topology { border-style: dashed; }
 .preview-topology .asset-placeholder-title { font-size: clamp(1.5rem, 2.3vw, 2.25rem); }
 .preview-open { position: absolute; inset: 0; width: 100%; height: 100%; text-align: left; }
-.preview-open > span { position: absolute; right: 18px; bottom: 65px; display: flex; align-items: center; gap: 9px; padding: 11px 14px; background: var(--color-paper); color: var(--color-ink); font-size: .8125rem; box-shadow: 0 3px 12px #20251c15; transition: background .2s, transform .25s; }
+.preview-open > span { position: absolute; right: 18px; bottom: 12px; display: flex; align-items: center; gap: 9px; padding: 11px 14px; background: var(--color-paper); color: var(--color-ink); font-size: .8125rem; box-shadow: 0 3px 12px #20251c15; transition: background .2s, transform .25s; }
 .preview-open:hover > span { background: #fff; transform: translateY(-3px); }
 .preview-open:focus-visible { outline: 3px solid #9b320f; outline-offset: 5px; }
 .work-preview:hover .preview-browser { transform: none; }
@@ -248,7 +247,7 @@ h2 { font-family: var(--display); font-weight: 600; font-size: clamp(3.5rem, 6vw
   .preview-stage { padding: 30px 24px; aspect-ratio: 1.1; }
   .preview-stage-devices { padding-right: 45px; aspect-ratio: 1; }
   .preview-phone { width: 30%; right: 16px; }
-  .preview-open > span { right: 14px; bottom: 68px; }
+  .preview-open > span { right: 14px; bottom: 12px; }
   .additional-work { gap: 28px; }
   .work-secondary .preview-stage { padding: 30px 20px; aspect-ratio: 1.5; }
   .work-secondary .preview-browser { width: 100%; }
@@ -305,9 +304,7 @@ h2 { font-family: var(--display); font-weight: 600; font-size: clamp(3.5rem, 6vw
   .browser-dots { gap: 3px; }
   .browser-dots i { width: 4px; height: 4px; }
   .browser-viewport { aspect-ratio: 1.3; }
-  .preview-caption { padding: 12px 14px; align-items: flex-start; min-height: 60px; }
-  .preview-caption > svg { margin-top: 2px; }
-  .preview-open > span { padding: 9px 12px; bottom: 75px; right: 12px; }
+  .preview-open > span { padding: 9px 12px; bottom: 12px; right: 12px; }
   .preview-original { min-height: 160px; }
   .preview-topology .asset-placeholder-title { font-size: 1.5rem; }
   .work-secondary { display: flex; gap: 0; }
@@ -329,6 +326,12 @@ h2 { font-family: var(--display); font-weight: 600; font-size: clamp(3.5rem, 6vw
 .work-secondary .project-visual.has-project-image .preview-stage { aspect-ratio: auto; padding: 12px; }
 .project-visual.has-project-image .preview-browser { width: 100%; }
 .project-visual.has-project-image .preview-original { height: auto; min-height: 0; }
+.project-visual.has-project-image .preview-stage-devices { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .3fr); align-items: center; gap: 12px; }
+.project-visual.has-project-image .preview-stage-devices .preview-phone { position: relative; inset: auto; width: 100%; max-width: 220px; aspect-ratio: auto; padding: 5px; margin: 0; border-radius: 16px; justify-self: end; }
+.project-visual.has-project-image .phone-viewport { height: auto; border-radius: 11px; }
+.project-visual.has-project-image .phone-viewport > img { display: block; width: 100%; height: auto; object-fit: contain; }
+.project-visual.has-project-image .phone-speaker { display: none; }
+
 .projects-section .will-reveal.is-visible { transform: none; }
 
 .skills-section { background: var(--color-ink); color: var(--color-paper); }

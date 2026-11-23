@@ -35,6 +35,7 @@ function ProjectDialog({ project, onClose }) {
     <div className="dialog-top"><span className="eyebrow">{project.category}</span><button ref={dismiss} onClick={onClose} aria-label="Close project details" className="icon-button"><X /></button></div>
     <ProjectVisual project={project} />
     {project.image && <div className="project-asset-actions"><a href={project.image} target="_blank" rel="noopener noreferrer">Open full-size image <ExternalLink size={16} aria-hidden="true" /><span className="sr-only"> for {project.title} (opens in a new tab)</span></a></div>}
+    {project.mobileImage && <div className="project-asset-actions"><a href={project.mobileImage} target="_blank" rel="noopener noreferrer">Open Android screenshot <ExternalLink size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></div>}
     <div className="dialog-content"><h2 id="dialog-title">{project.showcaseTitle || project.title}</h2><p className="dialog-subtitle">{project.subtitle}</p><p>{project.detail}</p><h3>Project scope</h3><ul className="feature-list">{project.features.map(feature => <li key={feature}>{feature}</li>)}</ul><div className="tags">{project.stack.map(tech => <span key={tech}>{tech}</span>)}</div><ProjectLinks project={project} />{(!project.image || (project.id === 'cams' && !project.mobileImage)) && <p className="asset-note">{project.assetNote}{!project.github && !project.live ? ' Project links have not been supplied yet.' : ''}</p>}</div>
   </dialog>;
 }

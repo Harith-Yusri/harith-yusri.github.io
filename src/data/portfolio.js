@@ -23,8 +23,9 @@ export const projects = [
     github: 'https://github.com/Harith-Yusri/carry-mark-monitoring-system', live: null,
     image: '/images/projects/cams-dashboard.png', imageAlt: 'UiTM CAMS lecturer workspace showing programme tabs and subject assessment hubs',
     imageWidth: 1909, imageHeight: 989,
-    mobileImage: null, mobileImageAlt: 'UiTM CAMS Android assessment interface screenshot',
-    assetNote: 'Android application screenshot to be added.',
+    mobileImage: '/images/projects/cams-android.jpg', mobileImageAlt: 'UiTM CAMS Android student portal showing subjects, assessment release status, and carry marks',
+    mobileImageWidth: 576, mobileImageHeight: 1280,
+    assetNote: null,
   },
   {
     id: 'ares', title: 'A.R.E.S.', subtitle: 'Tactical EVA Navigator',
