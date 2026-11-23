@@ -35,12 +35,15 @@ To replace the portrait, put the new file in `public/images/` and update `profil
 ### Still needed from you
 
 - Résumé PDF. Put it in `public/` and set `profile.resume`, for example `/harith-yusri-resume.pdf`. The real download action appears when configured.
-- Actual screenshots for the web projects, your GITC network diagram, and photographs of the bathtub prototype. Put them in `public/images/` and set each project's `image` and `imageAlt`. Current previews are explicitly labeled placeholders, not screenshots or the original GITC topology.
+- UiTM CAMS's Android screenshot. The supplied web dashboard is already displayed; the phone frame appears when `mobileImage` is configured.
+- NEXUS HUB's screenshot; its preview remains a labeled placeholder.
 - NEXUS HUB's live URL; optional repository/demo links for projects that do not yet have them. Set the relevant `github` or `live` field. A null value renders no misleading link.
 
 Selected Work uses the `featured` flag to present UiTM CAMS, A.R.E.S., GITC, and NEXUS HUB as four alternating editorial showcases. Laravel and Smart Bathtub appear under Explore All Projects. Edit `discipline` and optional `showcaseTitle` for presentation labels. Web project images automatically appear in browser frames; GITC diagrams and prototype photos appear in uncropped frames. For CAMS, set `image` to the web dashboard capture and `mobileImage` / `mobileImageAlt` to the Android capture. Each missing capture has a clearly labeled placeholder; the frames contain no fabricated application data.
 
-Use local WebP/AVIF/JPEG images at sensible sizes (roughly 1000–1600px wide for previews). The portrait is loaded with high priority and project images are lazy-loaded. Prefer readable landscape screenshots; previews use cover cropping.
+Your supplied CAMS, A.R.E.S., GITC, Laravel, and Smart Bathtub images are copied unchanged into `public/images/projects/` and connected to their respective projects. The local `images/` folder holds source copies and is ignored by Git. `imageWidth` and `imageHeight` preserve each screenshot's proportions, and project dialogs include links to open the full-size originals.
+
+Use local PNG/WebP/AVIF/JPEG images at sensible sizes. The portrait is loaded with high priority and project images are lazy-loaded. Preserve readable screenshot resolution and update `imageWidth` / `imageHeight` when replacing images.
 
 When adding or replacing a file or link, run `npm run check` and `npm run build` again. Manually open the project previews, dialogs, navigation, contact/download links, and mobile menu after changes.
 

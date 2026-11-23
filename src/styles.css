@@ -188,6 +188,13 @@ h2 { font-family: var(--display); font-weight: 600; font-size: clamp(3.5rem, 6vw
 .asset-placeholder-compact .asset-placeholder-note { font-size: .75rem; }
 .preview-original { width: 100%; height: 100%; min-height: 220px; border: 1px solid currentColor; background: #ffffff12; }
 .preview-original > img { width: 100%; height: 100%; object-fit: contain; transition: transform .5s ease; }
+.has-project-image .browser-viewport > img { object-fit: contain; }
+.has-project-image.visual-network .preview-stage { aspect-ratio: 1.03; padding: 24px; }
+.has-project-image .preview-original { min-height: 0; background: #fff; border: 1px solid #24262230; }
+.work-secondary .has-project-image.visual-iot .preview-stage { aspect-ratio: 1.1; padding: 20px; }
+.project-asset-actions { display: flex; justify-content: flex-end; padding: 14px 24px 0; }
+.project-asset-actions a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: .875rem; text-decoration: underline; text-underline-offset: 4px; }
+.project-asset-actions a:hover { color: #a23b19; }
 .preview-topology { border-style: dashed; }
 .preview-topology .asset-placeholder-title { font-size: clamp(1.5rem, 2.3vw, 2.25rem); }
 .preview-open { position: absolute; inset: 0; width: 100%; height: 100%; text-align: left; }

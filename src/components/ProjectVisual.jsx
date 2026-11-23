@@ -20,20 +20,21 @@ function MissingAsset({ type = 'web', compact = false }) {
 function BrowserFrame({ project, type }) {
   return <div className="preview-browser">
     <div className="browser-toolbar" aria-hidden="true"><span className="browser-dots"><i /><i /><i /></span><span>{project.id === 'cams' ? 'UiTM CAMS · Web' : project.title}</span><Monitor size={13} /></div>
-    <div className="browser-viewport">{project.image ? <img src={project.image} alt={project.imageAlt} width="1440" height="900" loading="lazy" /> : <MissingAsset type={type} />}</div>
+    <div className="browser-viewport" style={project.image && project.imageWidth && project.imageHeight ? { aspectRatio: `${project.imageWidth} / ${project.imageHeight}` } : undefined}>{project.image ? <img src={project.image} alt={project.imageAlt} width={project.imageWidth || 1440} height={project.imageHeight || 900} loading="lazy" /> : <MissingAsset type={type} />}</div>
   </div>;
 }
 
 export default function ProjectVisual({ project }) {
   const isWeb = !['gitc', 'bathtub'].includes(project.id);
+  const showPhone = project.id === 'cams' && (project.mobileImage || !project.image);
   const type = project.id === 'ares' ? 'navigation' : project.id === 'nexus' ? 'collaboration' : 'web';
-  return <div className={`project-visual visual-${project.theme}`}>
-    <div className={`preview-stage ${project.id === 'cams' ? 'preview-stage-devices' : ''}`}>
+  return <div className={`project-visual visual-${project.theme} ${project.image ? 'has-project-image' : ''}`}>
+    <div className={`preview-stage ${showPhone ? 'preview-stage-devices' : ''}`}>
       {isWeb ? <BrowserFrame project={project} type={type} /> : <div className={`preview-original ${project.id === 'gitc' ? 'preview-topology' : ''}`}>
-        {project.image ? <img src={project.image} alt={project.imageAlt} width="1400" height="950" loading="lazy" /> : <MissingAsset type={project.id === 'gitc' ? 'topology' : 'prototype'} />}
+        {project.image ? <img src={project.image} alt={project.imageAlt} width={project.imageWidth || 1400} height={project.imageHeight || 950} loading="lazy" /> : <MissingAsset type={project.id === 'gitc' ? 'topology' : 'prototype'} />}
       </div>}
-      {project.id === 'cams' && <div className="preview-phone"><div className="phone-speaker" aria-hidden="true" /><div className="phone-viewport">{project.mobileImage ? <img src={project.mobileImage} alt={project.mobileImageAlt} width="420" height="900" loading="lazy" /> : <MissingAsset type="android" compact />}</div></div>}
+      {showPhone && <div className="preview-phone"><div className="phone-speaker" aria-hidden="true" /><div className="phone-viewport">{project.mobileImage ? <img src={project.mobileImage} alt={project.mobileImageAlt} width="420" height="900" loading="lazy" /> : <MissingAsset type="android" compact />}</div></div>}
     </div>
-    <p className="preview-caption"><Image size={14} aria-hidden="true" />{project.image ? (project.id === 'gitc' ? 'Original network design · academic proposal' : project.id === 'bathtub' ? 'Physical prototype photograph' : 'Project screenshot') : (project.id === 'gitc' ? 'Diagram placeholder · academic design proposal' : project.id === 'bathtub' ? 'Photo placeholder · physical prototype' : 'Preview placeholder · screenshots to be added')}</p>
+    <p className="preview-caption"><Image size={14} aria-hidden="true" />{project.image ? (project.id === 'gitc' ? 'Original network design · academic proposal' : project.id === 'bathtub' ? 'Physical prototype photograph' : project.id === 'cams' && !project.mobileImage ? 'Web dashboard · Android screenshot pending' : 'Project screenshot') : (project.id === 'gitc' ? 'Diagram placeholder · academic design proposal' : project.id === 'bathtub' ? 'Photo placeholder · physical prototype' : 'Preview placeholder · screenshots to be added')}</p>
   </div>;
 }

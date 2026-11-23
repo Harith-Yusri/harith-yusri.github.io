@@ -10,3 +10,4 @@ test-results/
 # Local source photo and superseded portrait; the active PNG is in public/images/.
 /professional photo.png
 /public/images/harith-yusri.jpg
+/images/
