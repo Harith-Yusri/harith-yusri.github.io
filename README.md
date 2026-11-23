@@ -84,3 +84,7 @@ The included SVG social card works as a local graphic. For broad social network 
 ## Implementation verification
 
 The production build, content validation, and rendered HTML/asset checks pass. The supplied GitHub profile, three repositories, and A.R.E.S. live URL returned HTTP 200. Selected Work spacing and image presentation were reviewed in Safari at desktop (1440px), tablet (768px), and mobile (390px) widths; the Laravel project dialog and Escape dismissal were also checked. The oversized nameplate was checked against the bundled font's metrics to prevent horizontal overflow.
+
+## Themes
+
+Dark is the first-visit default, independent of system appearance. The navigation toggle switches between dark and warm light themes and persists `portfolio-theme` in localStorage. The synchronous `public/theme-init.js` applies only valid saved values before styles and React load; unavailable storage falls back to dark and leaves the toggle functional for the current visit. Semantic tokens and the Tailwind dark variant are centralized in `src/theme.css`. Screenshots keep their original colors in both themes. Theme transitions respect reduced motion.

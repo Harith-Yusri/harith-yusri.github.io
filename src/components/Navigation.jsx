@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const links = [['about', 'About'], ['projects', 'Projects'], ['skills', 'Skills'], ['experience', 'Journey']];
 
@@ -34,6 +35,7 @@ export default function Navigation() {
         {links.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => setOpen(false)}>{label}</a>)}
         <a href="#contact" className="nav-contact" onClick={() => setOpen(false)}>Let’s connect <span aria-hidden="true">✳</span></a>
       </nav>
+      <ThemeToggle />
     </div>
   </header>;
 }
