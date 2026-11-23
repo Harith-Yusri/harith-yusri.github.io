@@ -1,0 +1,39 @@
+import { Camera, Image, Monitor, Network, Smartphone } from 'lucide-react';
+
+function MissingAsset({ type = 'web', compact = false }) {
+  const content = {
+    web: [Monitor, 'Web dashboard', 'Screenshot to be added'],
+    android: [Smartphone, 'Android interface', 'Screenshot to be added'],
+    navigation: [Monitor, 'Mars navigation interface', 'Screenshot to be added'],
+    collaboration: [Monitor, 'Student collaboration platform', 'Screenshot to be added'],
+    topology: [Network, 'Network topology', 'Original diagram to be added'],
+    prototype: [Camera, 'Physical IoT prototype', 'Photograph to be added'],
+  };
+  const [Icon, title, note] = content[type];
+  return <div className={`asset-placeholder ${compact ? 'asset-placeholder-compact' : ''}`}>
+    <Icon size={compact ? 24 : 34} strokeWidth={1.25} aria-hidden="true" />
+    <span className="asset-placeholder-title">{title}</span>
+    <span className="asset-placeholder-note">{note}</span>
+  </div>;
+}
+
+function BrowserFrame({ project, type }) {
+  return <div className="preview-browser">
+    <div className="browser-toolbar" aria-hidden="true"><span className="browser-dots"><i /><i /><i /></span><span>{project.id === 'cams' ? 'UiTM CAMS · Web' : project.title}</span><Monitor size={13} /></div>
+    <div className="browser-viewport">{project.image ? <img src={project.image} alt={project.imageAlt} width="1440" height="900" loading="lazy" /> : <MissingAsset type={type} />}</div>
+  </div>;
+}
+
+export default function ProjectVisual({ project }) {
+  const isWeb = !['gitc', 'bathtub'].includes(project.id);
+  const type = project.id === 'ares' ? 'navigation' : project.id === 'nexus' ? 'collaboration' : 'web';
+  return <div className={`project-visual visual-${project.theme}`}>
+    <div className={`preview-stage ${project.id === 'cams' ? 'preview-stage-devices' : ''}`}>
+      {isWeb ? <BrowserFrame project={project} type={type} /> : <div className={`preview-original ${project.id === 'gitc' ? 'preview-topology' : ''}`}>
+        {project.image ? <img src={project.image} alt={project.imageAlt} width="1400" height="950" loading="lazy" /> : <MissingAsset type={project.id === 'gitc' ? 'topology' : 'prototype'} />}
+      </div>}
+      {project.id === 'cams' && <div className="preview-phone"><div className="phone-speaker" aria-hidden="true" /><div className="phone-viewport">{project.mobileImage ? <img src={project.mobileImage} alt={project.mobileImageAlt} width="420" height="900" loading="lazy" /> : <MissingAsset type="android" compact />}</div></div>}
+    </div>
+    <p className="preview-caption"><Image size={14} aria-hidden="true" />{project.image ? (project.id === 'gitc' ? 'Original network design · academic proposal' : project.id === 'bathtub' ? 'Physical prototype photograph' : 'Project screenshot') : (project.id === 'gitc' ? 'Diagram placeholder · academic design proposal' : project.id === 'bathtub' ? 'Photo placeholder · physical prototype' : 'Preview placeholder · screenshots to be added')}</p>
+  </div>;
+}

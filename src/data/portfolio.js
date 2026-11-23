@@ -1,0 +1,101 @@
+// Replace null values with your real details. Local assets belong in public/.
+export const profile = {
+  name: 'Mohamad Harith Yusri',
+  github: 'https://github.com/Harith-Yusri',
+  linkedin: 'https://www.linkedin.com/in/harith-yusri-1677612b0/',
+  email: 'harithyusri5369@gmail.com',
+  phone: '+6010-4595958',
+  resume: null, // e.g. '/harith-yusri-resume.pdf'
+  portrait: '/images/harith-yusri.png', // Supplied transparent portrait, without alterations
+  portraitIsCutout: true,
+  availability: '15 March – 18 June 2027',
+};
+
+export const projects = [
+  {
+    id: 'cams', title: 'UiTM CAMS', subtitle: 'Continuous Assessment Monitoring System',
+    featured: true, discipline: 'Full-Stack & Mobile Development',
+    category: 'Final year project', filter: 'Software', theme: 'cams',
+    description: 'Making continuous assessment easier to follow, for students and educators.',
+    detail: 'A web and Android-based academic monitoring system that brings assessment records, automated mark calculations, and role-based access into one place.',
+    stack: ['React', 'TypeScript', 'Kotlin', 'Supabase', 'PostgreSQL'],
+    features: ['Web and Android interfaces', 'Role-based access', 'Automated mark calculations', 'Continuous assessment monitoring'],
+    github: 'https://github.com/Harith-Yusri/carry-mark-monitoring-system', live: null,
+    image: null, imageAlt: 'UiTM CAMS web dashboard screenshot',
+    mobileImage: null, mobileImageAlt: 'UiTM CAMS Android assessment interface screenshot',
+    assetNote: 'Application screenshots to be added.',
+  },
+  {
+    id: 'ares', title: 'A.R.E.S.', subtitle: 'Tactical EVA Navigator',
+    featured: true, discipline: 'Hackathon / Web Development', showcaseTitle: 'A.R.E.S. Tactical EVA Navigator',
+    category: 'NASA Space Apps Challenge 2026', filter: 'Software', theme: 'ares',
+    description: 'Exploring safer routes across the surface of Mars.',
+    detail: 'A Mars exploration navigation application combining A* pathfinding, terrain hazard analysis, emergency routing, and simulated oxygen safety calculations. The safety calculations are a simulation.',
+    stack: ['React', 'JavaScript', 'A* Pathfinding', 'Tailwind CSS', 'Vite'],
+    features: ['A* pathfinding', 'Terrain hazard analysis', 'Emergency routing', 'Simulated oxygen safety calculations'],
+    github: 'https://github.com/Ac-Ey/mars_bar', live: 'https://mars-bar.vercel.app',
+    image: null, imageAlt: 'A.R.E.S. navigation application screenshot',
+    assetNote: 'Application screenshots to be added.',
+  },
+  {
+    id: 'gitc', title: 'GITC Inc.', subtitle: 'Enterprise Branch Network Design',
+    featured: true, discipline: 'Network Architecture & Infrastructure', showcaseTitle: 'GITC Enterprise Network Design',
+    category: 'Academic group project', filter: 'Networks', theme: 'network',
+    description: 'Designing a segmented, resilient enterprise branch network.',
+    detail: 'A proposed three-tier network architecture incorporating VLAN segmentation, ACLs, FortiGate, VPN connectivity, and redundancy. This is an academic network design project, not a physically deployed enterprise network.',
+    stack: ['Cisco Networking', 'VLANs', 'VPN', 'Network Security', 'ACLs', 'FortiGate'],
+    features: ['Proposed three-tier architecture', 'Network segmentation', 'Redundant connectivity', 'Secure branch connectivity'],
+    github: null, live: null, image: null, imageAlt: 'GITC proposed network architecture diagram',
+    assetNote: 'Original network design diagram and project materials to be added.',
+  },
+  {
+    id: 'laravel', title: 'Carry Mark Monitoring', subtitle: 'Academic assessment, built with Laravel',
+    featured: false, discipline: 'Web Development / Academic Project',
+    category: 'Academic project', filter: 'Software', theme: 'laravel',
+    description: 'A clearer view of assessments, marks, and student progress.',
+    detail: 'A web-based academic assessment management system with student and lecturer dashboards, mark tracking, and downloadable reports.',
+    stack: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS'],
+    features: ['Student and lecturer dashboards', 'Mark tracking', 'Downloadable reports'],
+    github: 'https://github.com/Harith-Yusri/carry-marks-website-laravel', live: null,
+    image: null, imageAlt: 'Laravel assessment management screenshot',
+    assetNote: 'Application screenshots to be added.',
+  },
+  {
+    id: 'bathtub', title: 'Smart Bathtub', subtitle: 'Safety & Monitoring System',
+    featured: false, discipline: 'IoT / Physical Prototype',
+    category: 'IoT academic group project', filter: 'IoT', theme: 'iot',
+    description: 'Connecting physical sensors with practical safety monitoring.',
+    detail: 'A physical IoT prototype with water-level and temperature monitoring, automated water-flow control, safety alerts, and cloud monitoring through Firebase Firestore.',
+    stack: ['ESP32', 'Arduino IDE', 'Firebase Firestore', 'IoT Sensors'],
+    features: ['Water-level and temperature sensors', 'Automated water-flow control', 'Safety alerts', 'Cloud monitoring'],
+    github: null, live: null, image: null, imageAlt: 'Smart Bathtub physical IoT prototype photograph',
+    assetNote: 'Prototype photographs and project materials to be added.',
+  },
+  {
+    id: 'nexus', title: 'NEXUS HUB', subtitle: 'Student Collaboration Platform',
+    featured: true, discipline: 'Web Development / KitaHack 2026',
+    category: 'KitaHack 2026', filter: 'Software', theme: 'nexus',
+    description: 'Bringing student updates and academic information together.',
+    detail: 'A working, hosted student collaboration platform intended to centralize academic updates and improve information sharing, with Firebase Authentication and Cloud Firestore.',
+    stack: ['React', 'Vite', 'Firebase Authentication', 'Cloud Firestore', 'Firebase Hosting'],
+    features: ['Student collaboration', 'Centralized academic updates', 'Firebase Authentication', 'Cloud Firestore integration'],
+    github: null, live: null, image: null, imageAlt: 'NEXUS HUB student collaboration platform screenshot',
+    assetNote: 'Hosted platform URL and application screenshots to be added.',
+  },
+];
+
+export const skills = [
+  { name: 'Programming', icon: 'code', items: ['Java', 'C++', 'JavaScript', 'PHP', 'SQL'] },
+  { name: 'Web development', icon: 'web', items: ['HTML', 'CSS', 'React', 'Node.js', 'Laravel', 'Tailwind CSS'] },
+  { name: 'Databases', icon: 'database', items: ['MySQL', 'PostgreSQL', 'Supabase', 'Firebase'] },
+  { name: 'Development tools', icon: 'tools', items: ['Git', 'GitHub', 'Visual Studio Code', 'Vite', 'Vercel'] },
+  { name: 'Systems & networking', icon: 'network', items: ['Linux', 'Windows Server', 'Cisco Packet Tracer', 'Network Troubleshooting'] },
+  { name: 'Cybersecurity', icon: 'security', items: ['Kali Linux', 'Nmap', 'Wireshark', 'Burp Suite', 'Metasploit Framework', 'SQLmap'] },
+  { name: 'AI-assisted development', icon: 'ai', items: ['ChatGPT', 'AI-assisted programming and debugging'] },
+];
+
+export const experience = [
+  { type: 'Education', date: 'March 2025 – Present', title: 'Bachelor of Computer Science (Hons.)', organization: 'Universiti Teknologi MARA', description: 'Netcentric Computing', grade: 'CGPA 3.81 / 4.00' },
+  { type: 'Experience', date: 'September 2024 – February 2025', title: 'System Engineer Intern', organization: 'Beyond2U Sdn. Bhd.', description: 'Supported troubleshooting of systems, networks, and enterprise applications to help maintain reliable IT operations.' },
+  { type: 'Education', date: 'October 2022 – February 2025', title: 'Diploma in Computer Science', organization: 'Universiti Teknologi MARA', grade: 'CGPA 3.64 / 4.00' },
+];

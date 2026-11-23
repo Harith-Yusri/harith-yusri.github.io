@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+
+# Local source photo and superseded portrait; the active PNG is in public/images/.
+/professional photo.png
+/public/images/harith-yusri.jpg
